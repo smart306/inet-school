@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,10 +11,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import Image from "next/image";
 
 export function NavBar() {
-
   return (
     <nav className="w-full fixed z-50">
       <NavigationMenu>

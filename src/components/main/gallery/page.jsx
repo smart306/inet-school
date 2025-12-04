@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +9,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
 import {
   Dialog,
   DialogContent,
@@ -16,7 +16,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const data = [
   {
@@ -102,12 +102,8 @@ export default function Gallery() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious
-              className={"hidden"}
-            />
-            <CarouselNext
-              className={"hidden"}
-            />
+            <CarouselPrevious className={"hidden"} />
+            <CarouselNext className={"hidden"} />
           </Carousel>
         </div>
         <div className="w-full flex flex-row justify-center items-center">

@@ -1,30 +1,30 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export default function About() {
-    const data = [
-      {
-        id: 1,
-        name: "Елеектронний кабінет",
-        image: "/Group29.svg",
-      },
-      {
-        id: 2,
-        name: "Відгуки та питання",
-        image: "/Group32.svg",
-      },
-      {
-        id: 3,
-        name: "Відгуки та питання",
-        image: "/Group32.svg",
-      },
-      {
-        id: 4,
-        name: "Елеектронний кабінет",
-        image: "/Group29.svg",
-      },
-    ];
+  const data = [
+    {
+      id: 1,
+      name: "Елеектронний кабінет",
+      image: "/Group29.svg",
+    },
+    {
+      id: 2,
+      name: "Відгуки та питання",
+      image: "/Group32.svg",
+    },
+    {
+      id: 3,
+      name: "Відгуки та питання",
+      image: "/Group32.svg",
+    },
+    {
+      id: 4,
+      name: "Елеектронний кабінет",
+      image: "/Group29.svg",
+    },
+  ];
   return (
     <div className="pt-16">
       <div className="my-container py-6 space-y-16 lg:space-x-16 lg:flex lg:flex-row">
