@@ -18,36 +18,21 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
-const data = [
-  {
-    id: 1,
-    image: "/image3.png",
-  },
-  {
-    id: 2,
-    image: "/image4.png",
-  },
-  {
-    id: 3,
-    image: "/image5.png",
-  },
-];
-
-export default function Gallery() {
-  const [active, setActive] = useState(data[0]);
+export default function Gallery({ gallery }) {
+  const [active, setActive] = useState(gallery[0]);
   const [api, setApi] = useState(null);
   useEffect(() => {
     if (api) {
       api.on("select", () => {
         const selectedIndex = api.selectedScrollSnap();
-        setActive(data[selectedIndex]);
+        setActive(gallery[selectedIndex]);
       });
     }
   }, [api]);
 
   useEffect(() => {
     if (api) {
-      const index = data.findIndex((item) => item.id === active.id);
+      const index = gallery.findIndex((item) => item._id === active._id);
       api.scrollTo(index);
     }
   }, [active, api]);
@@ -67,9 +52,9 @@ export default function Gallery() {
             className="lg:w-[90%]"
           >
             <CarouselContent>
-              {data.map((item, i) => (
+              {gallery.map((item, i) => (
                 <CarouselItem
-                  key={item.id}
+                  key={item._id}
                   className={cn(
                     "h-[168px] lg:h-[280px] aspect-video relative inline-flex basis-auto",
                   )}
@@ -78,7 +63,7 @@ export default function Gallery() {
                   <Dialog>
                     <DialogTrigger asChild>
                       <Image
-                        src={item.image}
+                        src={item.image?.asset?.url || "/Rectangle12.png"}
                         alt="p"
                         fill
                         className="object-cover mx-auto object-center h-full cursor-pointer"
@@ -91,7 +76,7 @@ export default function Gallery() {
                         Опис для користувачів скрінрідерів
                       </DialogDescription>
                       <Image
-                        src={item.image}
+                        src={item.image?.asset?.url || "/Rectangle12.png"}
                         alt="p"
                         width={400}
                         height={400}
@@ -108,7 +93,7 @@ export default function Gallery() {
         </div>
         <div className="w-full flex flex-row justify-center items-center">
           <Button variant={"outline"} className="items-center text-[16px]">
-            Галерея{" "}
+            Галерея
             <Image src="/RightCircle.svg" width={14} height={14} alt="p" />
           </Button>
         </div>

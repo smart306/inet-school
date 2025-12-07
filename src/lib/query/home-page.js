@@ -34,7 +34,29 @@ query HeaderBlock{
       }
     }
   }
-
   
+  gallery: allGalleryElement(limit: 3){
+    _id
+    _createdAt
+    title
+    date
+    image{
+      asset{
+        url
+        altText
+      }
+    }
+  }
+  footer: allFooterBlock{
+    _id
+    _type
+    _createdAt
+    _updatedAt
+    _rev
+    _key
+    phone
+    email
+    address
+  }
 }
 `;

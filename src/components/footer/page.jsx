@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({footer}) {
+  console.log("footer:", footer);
   return (
     <div className="bg-nav relative rounded-t-4xl w-full">
       <div className="absolute inset-0">
@@ -21,19 +22,18 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-4">
             <div className="flex flex-row justify-right space-x-4 items-center">
               <Image src="/phone.svg" width={24} height={24} alt="p" />
-              <p className="text-[16px]! text-white!">(03144)79-8-91</p>
+              <p className="text-[16px]! text-white!">{footer.phone}</p>
             </div>
 
             <div className="flex flex-row justify-right space-x-4 items-center">
               <Image src="/mail.svg" width={24} height={24} alt="p" />
-              <p className="text-[16px]! text-white!">ilnlicej@ukr.net</p>
+              <p className="text-[16px]! text-white!">{footer.email}</p>
             </div>
 
             <div className="flex flex-row justify-right space-x-4 items-center">
               <Image src="/map_point.svg" width={24} height={24} alt="p" />
               <p className="text-[16px]! text-white! max-w-sm">
-                с. Ільниця, Хустський р-н, Закарпатська обл., вул. Шахтарська,
-                14
+                {footer.address}
               </p>
             </div>
           </div>

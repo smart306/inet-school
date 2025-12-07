@@ -11,54 +11,12 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-const data = [
-  {
-    id: 1,
-    image: "/Rectangle12.png",
-    name: "Вільні творять майбуття",
-    description:
-      "Цього листопада виповнюється 10 років від початку Революції Гідності ...",
-    authorpfp: "/Ellipse36.svg",
-    author: "Свищо Катерина",
-    time: "10.11.2023",
-  },
-  {
-    id: 2,
-    image: "/Rectangle12.png",
-    name: "Вільні творять майбуття",
-    description:
-      "Цього листопада виповнюється 10 років від початку Революції Гідності ...",
-    authorpfp: "/Ellipse36.svg",
-    author: "Свищо Катерина",
-    time: "10.11.2023",
-  },
-  {
-    id: 3,
-    image: "/Rectangle12.png",
-    name: "Вільні творять майбуття",
-    description:
-      "Цього листопада виповнюється 10 років від початку Революції Гідності ...",
-    authorpfp: "/Ellipse36.svg",
-    author: "Свищо Катерина",
-    time: "10.11.2023",
-  },
-  {
-    id: 4,
-    image: "/Rectangle12.png",
-    name: "Вільні творять майбуття",
-    description:
-      "Цього листопада виповнюється 10 років від початку Революції Гідності ...",
-    authorpfp: "/Ellipse36.svg",
-    author: "Свищо Катерина",
-    time: "10.11.2023",
-  },
-];
 export default function News({ news }) {
   return (
     <div className="py-6 lg:py-16">
       <div className="my-container space-y-6">
         <h1>Новини</h1>
-        <div className="grid grid-cols-2 grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 gap-2 md:gap-20">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-20">
           {news.map((item) => (
             <Card
               key={item._id}

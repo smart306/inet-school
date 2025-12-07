@@ -25,9 +25,14 @@ export async function getHomePage() {
       throw new Error("No data returned from home page query");
     }
 
-    return { header: data.header[0] || null, news: data.news || [] };
+    return {
+      header: data.header[0] || null,
+      news: data.news || null,
+      gallery: data.gallery || null,
+      footer: data.footer?.[0] || [],
+    };
   } catch (error) {
     console.error("Error fetching home page data:", error);
-    return { header: null, news: [] };
+    return { header: null, news: [], gallery: [], footer: null };
   }
 }

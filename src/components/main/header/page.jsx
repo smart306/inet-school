@@ -2,7 +2,6 @@
 import Image from "next/image";
 
 export default function Header({ header }) {
-  console.log("Header Component Data:", header);
   return (
     <div className="max-w-full pb-16">
       <div className="w-full h-[50vh] md:max-h-screen">

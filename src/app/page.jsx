@@ -5,15 +5,22 @@ import News from "@/components/main/news/news";
 import { getHomePage } from "@/lib/actions/home-page";
 
 export default async function Home() {
-  const { header, news } = await getHomePage();
+  const { header, news, gallery } = await getHomePage();
 
-  console.log("Home Page Data:", header, news);
+  console.log(
+    "Home Page Data:",
+    header,
+    "Home Page Data News:",
+    news,
+    "Home Page Data Gallery:",
+    gallery,
+  );
 
   return (
     <div className="space-y-16">
       <Header header={header} />
       <About />
-      <Gallery />
+      <Gallery gallery={gallery}/>
       <News news={news} />
     </div>
   );
