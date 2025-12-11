@@ -17,10 +17,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 export default function Gallery({ gallery }) {
   const [active, setActive] = useState(gallery[0]);
   const [api, setApi] = useState(null);
+  const router = useRouter();
+
   useEffect(() => {
     if (api) {
       api.on("select", () => {
@@ -70,7 +73,7 @@ export default function Gallery({ gallery }) {
                         onClick={() => setActive(item)}
                       />
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[425px] bg-transparent shadow-none rounded-none border-0 max-w-full max-h-full">
+                    <DialogContent className="aspect-video bg-transparent shadow-none rounded-none border-0 w-full">
                       <DialogTitle>Назва діалогу</DialogTitle>
                       <DialogDescription>
                         Опис для користувачів скрінрідерів
@@ -78,9 +81,8 @@ export default function Gallery({ gallery }) {
                       <Image
                         src={item.image?.asset?.url || "/Rectangle12.png"}
                         alt="p"
-                        width={400}
-                        height={400}
-                        className="object-contain"
+                        fill
+                        className="object-cover"
                       />
                     </DialogContent>
                   </Dialog>
@@ -92,7 +94,11 @@ export default function Gallery({ gallery }) {
           </Carousel>
         </div>
         <div className="w-full flex flex-row justify-center items-center">
-          <Button variant={"outline"} className="items-center text-[16px]">
+          <Button
+            variant={"outline"}
+            className="items-center text-[16px]"
+            onClick={() => router.push("/gallerypage")}
+          >
             Галерея
             <Image src="/RightCircle.svg" width={14} height={14} alt="p" />
           </Button>

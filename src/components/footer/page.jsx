@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer({footer}) {
-  console.log("footer:", footer);
   return (
     <div className="bg-nav relative rounded-t-4xl w-full">
       <div className="absolute inset-0">

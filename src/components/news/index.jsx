@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -12,11 +11,10 @@ import {
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-export default function News({ news }) {
+export default function NewsPage({ news }) {
   return (
-    <div className="py-6 lg:py-16">
-      <div className="my-container space-y-6">
-        <h1>Новини</h1>
+    <section className="h-[80vh] pt-[10%]">
+      <div className="my-container">
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-20">
           {news.map((item) => (
             <Link key={item._id} href={`/blog/${item.slug.current}`}>
@@ -66,13 +64,7 @@ export default function News({ news }) {
             </Link>
           ))}
         </div>
-        <div className="w-full flex flex-row justify-center items-center">
-          <Button variant={"primary"}>
-            Більше новин{" "}
-            <Image src="/LeftCircle.svg" width={14} height={14} alt="b" />
-          </Button>
-        </div>
       </div>
-    </div>
+    </section>
   );
 }

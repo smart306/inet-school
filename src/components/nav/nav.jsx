@@ -80,7 +80,7 @@ export function NavBar() {
                   className={navigationMenuTriggerStyle()}
                 >
                   <Link
-                    href="/#"
+                    href="/gallerypage"
                     className="h3 text-[16px]! hover:text-hover-nav"
                   >
                     Галерея
@@ -94,7 +94,7 @@ export function NavBar() {
                   className={navigationMenuTriggerStyle()}
                 >
                   <Link
-                    href="/#"
+                    href="/blog"
                     className="h3 text-[16px]! hover:text-hover-nav"
                   >
                     Новини

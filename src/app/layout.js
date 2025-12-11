@@ -2,7 +2,7 @@ import Footer from "@/components/footer/page";
 import "./globals.css";
 import { Montserrat_Alternates } from "next/font/google";
 import { NavBar } from "@/components/nav/nav";
-import { getHomePage } from "@/lib/actions/home-page";
+import { getFooterPage } from "@/lib/actions/footer-page";
 
 const montserrat = Montserrat_Alternates({
   subsets: ["latin"],
@@ -15,7 +15,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const { footer } = await getHomePage();
+  const { footer } = await getFooterPage();
   
   return (
     <html lang="en">
