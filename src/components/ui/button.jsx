@@ -15,15 +15,15 @@ const buttonVariants = cva(
         primary:
           "bg-nav text-white px-2 py-2 hover:text-nav hover:bg-transparent hover:border hover:border-1 hover:border-nav rounded-4xl cursor-pointer",
         outline:
-          "border border-1 rounded-4xl border-nav text-nav hover:bg-nav hover:text-white hover:border-white cursor-pointer",
+          "border border-1 border-nav text-nav rounded-2xl hover:bg-nav hover:text-white hover:border-white cursor-pointer",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary hover:shadow-shadow-nav hover:border hover:border-shadow-nav hover:border-1 hover:shadow-lg cursor-pointer",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-primary underline-offset-4 hover:underline"
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        default: "h-9 px-2 py-3 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",

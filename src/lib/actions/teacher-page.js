@@ -1,7 +1,7 @@
 "use server";
-import { ARTICLE_QUERY, NEWS_QUERY } from "../query/news-page";
+import { BIO_QUERY, TEACHERS_QUERY } from "../query/teacher-page";
 
-export async function getNews() {
+export async function getTeachers() {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_SANITY_API_URL}`, {
       method: "POST",
@@ -9,7 +9,7 @@ export async function getNews() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: NEWS_QUERY,
+        query: TEACHERS_QUERY,
       }),
       next: { revalidate: 150 }, // кешування/рефетч: налаштуйте згідно потреб
     });
@@ -23,42 +23,44 @@ export async function getNews() {
     if (!data) {
       throw new Error("No data returned from home page query");
     }
+
     return {
-      news: data.news || null,
+      teachers: data.teachers || null
     };
   } catch (error) {
     console.error("Error fetching home page data:", error);
-    return { news: [] };
+    return { teachers: [] };
   }
 }
 
-export async function getArticle(slug) {
+export async function getBio(slug) {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_SANITY_API_URL}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: ARTICLE_QUERY(slug)
-      }),
-      next: { revalidate: 150 }, // кешування/рефетч: налаштуйте згідно потреб
+     method: "POST",
+    headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify({
+             query: BIO_QUERY(slug)
+           }),
+           next: { revalidate: 150 }, // кешування/рефетч: налаштуйте згідно потреб
     });
-    
+
     if (!response.ok) {
       throw new Error(`Failed to fetch home page data: ${response.status}`);
     }
 
     const { data } = await response.json();
-    
+
     if (!data) {
       throw new Error("No data returned from home page query");
     }
+
     return {
-      article: data.article[0] || null,
+      bio: data.bio[0] || null
     };
   } catch (error) {
     console.error("Error fetching home page data:", error);
-    return { article: [] };
+    return { bio: [] };
   }
 }

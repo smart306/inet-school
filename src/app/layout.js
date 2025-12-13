@@ -20,9 +20,9 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <NavBar />
-        {children}
-        <Footer footer={footer}/>
+          <NavBar/>
+          {children}
+          <Footer footer={footer} />
       </body>
     </html>
   );

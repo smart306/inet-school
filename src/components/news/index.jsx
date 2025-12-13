@@ -13,18 +13,20 @@ import Link from "next/link";
 
 export default function NewsPage({ news }) {
   return (
-    <section className="h-[80vh] pt-[10%]">
+    <section className="h-[80vh] pt-[30%] sm:pt-[20%] md:pt-[15%] lg:pt-[10%]">
       <div className="my-container">
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-20">
           {news.map((item) => (
             <Link key={item._id} href={`/blog/${item.slug.current}`}>
-              <Card className={cn(`w-full pb-8 gap-6 px-0 cursor-pointer`)}>
+              <Card
+                className={cn(`w-full pb-2 lg:pb-8 gap-6 px-0 cursor-pointer`)}
+              >
                 <CardContent className="flex justify-center w-full min-h-[120px]">
                   <div className="relative w-full aspect-square md:aspect-video">
                     <Image
-                      src={item.image?.asset?.url || "/Rectangle12.png"}
+                      src={item.image?.asset?.url}
                       fill
-                      alt={item.imageAlt || "News Image"}
+                      alt="n"
                       className="object-cover w-full h-auto"
                     />
                   </div>
@@ -43,7 +45,7 @@ export default function NewsPage({ news }) {
                       <>
                         <Image
                           src={
-                            item.author?.image?.asset?.url || "/Ellipse36.svg"
+                            item.author?.image?.asset?.url
                           }
                           width={18}
                           height={18}

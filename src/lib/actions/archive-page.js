@@ -1,7 +1,7 @@
 "use server";
-import { HOME_QUERY } from "../query/home-page";
+import { ARCHIVE_QUERY } from "../query/archive-page";
 
-export async function getHomePage() {
+export async function getArchive() {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_SANITY_API_URL}`, {
       method: "POST",
@@ -9,7 +9,7 @@ export async function getHomePage() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: HOME_QUERY,
+        query: ARCHIVE_QUERY,
       }),
       next: { revalidate: 150 }, // кешування/рефетч: налаштуйте згідно потреб
     });
@@ -25,13 +25,10 @@ export async function getHomePage() {
     }
 
     return {
-      header: data.header[0] || null,
-      news: data.news || null,
-      gallery: data.gallery || null,
-      footer: data.footer?.[0] || [],
+      archive: data.archive || [],
     };
   } catch (error) {
     console.error("Error fetching home page data:", error);
-    return { header: null, news: [], gallery: [], footer: null };
+    return { archive: null };
   }
 }

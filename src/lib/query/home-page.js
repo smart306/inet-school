@@ -10,6 +10,18 @@ query HeaderBlock{
     }
   }
 
+  about: allAboutBlock{
+    _id
+    title
+    description
+    image{
+      asset{
+        url
+      }
+    }
+    button
+  }
+
   news: allNews(limit: 4){
     _id
     _createdAt

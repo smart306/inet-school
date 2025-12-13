@@ -6,15 +6,15 @@ export default function MarkDownStyl({children, className}){
       <div className={className}>
         <Markdown
           components={{
-            p: ({ children }) => <p className="text-green-400!">{children}</p>,
+            p: ({ children }) => <p className="text-black! text-[16px]!">{children}</p>,
             li: ({ children }) => (
-              <li className="text-green-400">{children}</li>
+              <li className="text-black! font-bold!">{children}</li>
             ),
             a: ({ children, href, target }) => (
               <Link
                 href={href}
                 target={target ?? "_blank"}
-                className="text-red-500"
+                className="text-blue-500 underline"
               >
                 {children}
               </Link>

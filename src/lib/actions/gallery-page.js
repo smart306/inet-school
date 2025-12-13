@@ -1,3 +1,4 @@
+"use server";
 import { GALLERY_QUERY } from "../query/gallery-page";
 
 export async function getGallery() {

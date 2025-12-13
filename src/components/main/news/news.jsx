@@ -11,8 +11,11 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function News({ news }) {
+  const router = useRouter();
+
   return (
     <div className="py-6 lg:py-16">
       <div className="my-container space-y-6">
@@ -67,7 +70,10 @@ export default function News({ news }) {
           ))}
         </div>
         <div className="w-full flex flex-row justify-center items-center">
-          <Button variant={"primary"}>
+          <Button
+            variant={"primary"}
+            onClick={() => router.push("/blog")}
+          >
             Більше новин{" "}
             <Image src="/LeftCircle.svg" width={14} height={14} alt="b" />
           </Button>
