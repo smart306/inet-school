@@ -8,7 +8,7 @@ export default async function Home() {
   const { header, news, gallery } = await getHomePage();
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-6 lg:space-y-16">
       <Header header={header} />
       <About />
       <Gallery gallery={gallery}/>

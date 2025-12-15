@@ -103,7 +103,7 @@ export default function GalleryPage({ gallery }) {
     return (
       <section className="h-screen pt-[30%] sm:pt-[20%] md:pt-[15%] lg:pt-[10%]">
         <div className="my-container">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {gallery.map((item, i) => (
               <Dialog key={i}>
                 <DialogTrigger asChild>
@@ -113,7 +113,7 @@ export default function GalleryPage({ gallery }) {
                     className={cn(`w-full gap-6 px-0 cursor-pointer`)}
                   >
                     <CardContent className="flex flex-col text-left w-full min-h-[120px]">
-                      <div className="relative w-full aspect-video md:aspect-video">
+                      <div className="relative w-full aspect-square xl:aspect-video">
                         <Image
                           src={item.image?.asset?.url}
                           fill

@@ -15,7 +15,7 @@ export default function TeachersPage({ teachers }) {
     return (
       <section className="h-screen pt-[30%] sm:pt-[20%] md:pt-[15%] lg:pt-[10%]">
         <div className="my-container">
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
             {teachers.map((item) => (
               <Link key={item._id} href={`/teachersroom/${item.slug.current}`}>
                 <Card
@@ -23,8 +23,8 @@ export default function TeachersPage({ teachers }) {
                     `w-full pb-2 lg:pb-8 gap-6 px-0 cursor-pointer flex flex-col justify-center text-center`,
                   )}
                 >
-                  <CardContent className="flex justify-center w-full min-h-[120px]">
-                    <div className="relative w-full aspect-square md:aspect-video">
+                  <CardContent className="flex justify-center w-full h-full">
+                    <div className="relative w-full aspect-square sm:aspect-square">
                       <Image
                         src={item.image?.asset?.url || "/Rectangle121.png"}
                         fill

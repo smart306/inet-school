@@ -17,6 +17,7 @@ import { useEffect, useState } from "react";
 import * as React from "react";
 import { DialogTitle } from "@radix-ui/react-dialog";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 const data = [
   {
     _id: 1,
@@ -53,7 +54,7 @@ export default function Gallery({ gallery }) {
    const [active, setActive] = useState(data[0]);
       const [api, setApi] = React.useState(null);
       const [current, setCurrent] = React.useState(0);
-  
+  const router = useRouter();
       React.useEffect(() => {
         if (!api) return;
   
@@ -93,13 +94,13 @@ export default function Gallery({ gallery }) {
 
   return (
     <div className="items-center w-full space-y-8 lg:space-y-10 overflow-x-hidden">
-      <div className="my-container space-y-10 lg:space-x-2 lg:space-y-2 xl:flex xl:flex-row">
-        <div className="w-full space-y-4 lg:space-x-10 sm:flex sm:flex-row sm:justify-center sm:items-center">
+      <div className="my-container space-y-10 w-full lg:flex lg:flex-row">
+        <div className="flex-1 lg:flex lg:flex-row space-y-4 lg:w-[90%]">
           <Carousel
             opts={{
               loop: true,
-              dragFree: false,
-              containScroll: "trimSnaps",
+              dragFree: true,
+              align: "start",
               slidesToScroll: 1,
             }}
             setApi={setApi}
@@ -195,7 +196,7 @@ export default function Gallery({ gallery }) {
             <CarouselNext className={"hidden"} />
           </Carousel>
         </div>
-        <div className="w-full flex flex-row justify-center items-center">
+        <div className="flex flex-row justify-center items-center">
           <Button
             variant={"outline"}
             className="items-center text-[16px]"
