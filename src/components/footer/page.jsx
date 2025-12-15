@@ -41,19 +41,31 @@ export default function Footer({footer}) {
             <Link href="#" className="h2 text-white font-[700] leading-[1.3]">
               Адміністрація
             </Link>
-            <Link href="#" className="h2 text-white font-[700] leading-[1.3]">
+            <Link
+              href="/teachersroom"
+              className="h2 text-white font-[700] leading-[1.3]"
+            >
               Учительська
             </Link>
             <Link href="#" className="h2 text-white font-[700] leading-[1.3]">
               Класи
             </Link>
-            <Link href="#" className="h2 text-white font-[700] leading-[1.3]">
+            <Link
+              href="/gallerypage"
+              className="h2 text-white font-[700] leading-[1.3]"
+            >
               Галерея
             </Link>
-            <Link href="#" className="h2 text-white font-[700] leading-[1.3]">
+            <Link
+              href="/blog"
+              className="h2 text-white font-[700] leading-[1.3]"
+            >
               Новини
             </Link>
-            <Link href="#" className="h2 text-white font-[700] leading-[1.3]">
+            <Link
+              href="/archive"
+              className="h2 text-white font-[700] leading-[1.3]"
+            >
               Архів
             </Link>
             <Link href="#" className="h2 text-white font-[700] leading-[1.3]">

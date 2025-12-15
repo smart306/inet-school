@@ -39,7 +39,7 @@ export default function About() {
                 className="lg:w-[80px] lg:h-[80px]"
               />
             </div>
-            <Button variant={"secondary"}>
+            <Button variant={"secondary"} className="px-4">
               <Image
                 src="/LeftCircle.svg"
                 width={20}
