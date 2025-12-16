@@ -4,6 +4,11 @@ import Header from "@/components/main/header/page";
 import News from "@/components/main/news/news";
 import { getHomePage } from "@/lib/actions/home-page";
 
+export const metadata = {
+  title: "Головна - Ільницький спортивно-гуманітарний ліцей",
+  description: "Ільницький спортивно-гуманітарний ліцей забезпечує якісну освіту, розвиток спортивних здібностей, гуманітарних навичок та гармонійний розвиток особистості.",
+};
+
 export default async function Home() {
   const { header, news, gallery } = await getHomePage();
 
