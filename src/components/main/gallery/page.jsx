@@ -51,7 +51,7 @@ const data = [
   },
 ];
 export default function Gallery({ gallery }) {
-   const [active, setActive] = useState(data[0]);
+   const [active, setActive] = useState(gallery[0]);
       const [api, setApi] = React.useState(null);
       const [current, setCurrent] = React.useState(0);
   const router = useRouter();
@@ -107,7 +107,7 @@ export default function Gallery({ gallery }) {
             className="lg:w-[90%]"
           >
             <CarouselContent>
-              {data.map((item, i) => (
+              {gallery.map((item, i) => (
                 <Dialog key={i}>
                   <DialogTrigger asChild>
                     <CarouselItem
@@ -117,7 +117,7 @@ export default function Gallery({ gallery }) {
                       onClick={() => setActive(item)}
                     >
                       <Image
-                        src={item.image || "/Rectangle12.png"}
+                        src={item.image?.asset?.url || "/Rectangle12.png"}
                         alt="p"
                         fill
                         className="object-cover mx-auto object-center h-full cursor-pointer"
@@ -129,13 +129,13 @@ export default function Gallery({ gallery }) {
                     <div className="w-full h-full">
                       <Carousel setApi={setApi} className="w-full">
                         <CarouselContent>
-                          {data.map((item, i) => (
+                          {gallery.map((item, i) => (
                             <CarouselItem key={i}>
                               <Card>
                                 <CardContent className="flex aspect-video items-center justify-center">
                                   <div className="relative w-full h-full">
                                     <Image
-                                      src={item.image}
+                                      src={item.image?.asset?.url}
                                       fill
                                       alt="slide"
                                       className="object-cover object-center"
@@ -150,7 +150,7 @@ export default function Gallery({ gallery }) {
 
                       <Carousel className="mt-2 w-full relative px-2">
                         <CarouselContent className="flex gap-1">
-                          {data.map((item, i) => (
+                          {gallery.map((item, i) => (
                             <CarouselItem
                               key={i}
                               className={cn(
@@ -172,7 +172,7 @@ export default function Gallery({ gallery }) {
                                     )}
                                   >
                                     <Image
-                                      src={item.image}
+                                      src={item.image?.asset?.url}
                                       fill
                                       alt="p"
                                       className="object-cover"

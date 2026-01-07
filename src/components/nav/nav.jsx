@@ -36,20 +36,6 @@ export function NavBar() {
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link
-                    href="/#"
-                    className="h3 text-[16px]! hover:text-hover-nav"
-                  >
-                    Адміністрація
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
@@ -63,21 +49,6 @@ export function NavBar() {
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link
-                    href="/#"
-                    className="h3 text-[16px]! hover:text-hover-nav"
-                  >
-                    Класи
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
               <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
@@ -102,34 +73,6 @@ export function NavBar() {
                     className="h3 text-[16px]! hover:text-hover-nav"
                   >
                     Новини
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link
-                    href="/archive"
-                    className="h3 text-[16px]! hover:text-hover-nav"
-                  >
-                    Архів
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link
-                    href="/#"
-                    className="h3 text-[16px]! hover:text-hover-nav"
-                  >
-                    Зворотній зв'язок
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -173,26 +116,10 @@ export function NavBar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem>
                         <Link
-                          href="/#"
-                          className="h3 text-[16px]! hover:text-hover-nav"
-                        >
-                          Адміністрація
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <Link
                           href="/teachersroom"
                           className="h3 text-[16px]! hover:text-hover-nav"
                         >
                           Учительська
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <Link
-                          href="/#"
-                          className="h3 text-[16px]! hover:text-hover-nav"
-                        >
-                          Класи
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem>
@@ -209,22 +136,6 @@ export function NavBar() {
                           className="h3 text-[16px]! hover:text-hover-nav"
                         >
                           Новини
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <Link
-                          href="/archive"
-                          className="h3 text-[16px]! hover:text-hover-nav"
-                        >
-                          Архів
-                        </Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <Link
-                          href="/#"
-                          className="h3 text-[16px]! hover:text-hover-nav"
-                        >
-                          Зворотній зв'язок
                         </Link>
                       </DropdownMenuItem>
                     </DropdownMenuGroup>
