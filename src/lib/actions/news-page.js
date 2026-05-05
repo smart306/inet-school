@@ -42,7 +42,7 @@ export async function getArticle(slug) {
       body: JSON.stringify({
         query: ARTICLE_QUERY(slug)
       }),
-      next: { revalidate: 150 }, // кешування/рефетч: налаштуйте згідно потреб
+      next: { revalidate: 150 }, 
     });
     
     if (!response.ok) {

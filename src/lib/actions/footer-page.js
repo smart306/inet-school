@@ -11,7 +11,7 @@ export async function getFooterPage() {
       body: JSON.stringify({
         query: FOOTER_QUERY,
       }),
-      next: { revalidate: 150 }, // кешування/рефетч: налаштуйте згідно потреб
+      next: { revalidate: 150 }, 
     });
 
     if (!response.ok) {

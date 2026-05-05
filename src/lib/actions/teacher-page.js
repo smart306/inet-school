@@ -11,7 +11,7 @@ export async function getTeachers() {
       body: JSON.stringify({
         query: TEACHERS_QUERY,
       }),
-      next: { revalidate: 150 }, // кешування/рефетч: налаштуйте згідно потреб
+      next: { revalidate: 150 }, 
     });
 
     if (!response.ok) {

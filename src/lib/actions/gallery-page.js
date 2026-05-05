@@ -11,7 +11,7 @@ export async function getGallery() {
       body: JSON.stringify({
         query: GALLERY_QUERY,
       }),
-      next: { revalidate: 150 }, // кешування/рефетч: налаштуйте згідно потреб
+      next: { revalidate: 150 }, 
     });
 
     if (!response.ok) {
